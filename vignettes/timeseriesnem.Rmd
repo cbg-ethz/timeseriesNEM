@@ -1,0 +1,45 @@
+---
+title: "timeseriesNEM"
+author: "Mathias Cardner"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+library(nem)
+library(lpSolve)
+source("../R/tsNEM.R")
+source("../R/helper_functions.R")
+```
+
+Let's generate a random NEM with 10 S-nodes.
+
+```{r}
+set.seed(1)
+nem.res <- sample_random_NEM_and_data(n = 10, m = 1000)
+plot(nem.res, transitiveReduction = TRUE)
+```
+
+Say we perturb S4. Which other S-nodes would then be perturbed? Generate an observational effect profile from this perturbation.
+
+```{r}
+test <- generate_tsNEM_dataset(nem.res, "S4")
+test$affectedSgenes
+```
+
+Use `timeseriesNEM` to infer from the observational effect profile which S-nodes were affected by the perturbation.
+
+```{r}
+tsNEM(test$nemObject, test$logDensities)
+```

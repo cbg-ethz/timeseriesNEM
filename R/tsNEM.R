@@ -17,7 +17,7 @@ rowMaker <- function(edgeCoordinates, dimension) {
 #' @param nemObject A \code{nem} object.
 #' @param constraintMatrix The corresponding canonical ILP constraint matrix.
 #' @return The ILP solution of the signalling states of the nodes in the graph.
-#' @import lpSolve
+#' @importFrom lpSolve lp
 runILP <- function(NamedEgeneProfile, nemObject, constraintMatrix) {
   # BEWARE: nem `inference = "score"' returns nested nemObject$mappos$mappos.
   obj.func.coefs <- sapply(nemObject[["control"]][["Sgenes"]], function(Sgene) {
