@@ -1,6 +1,3 @@
-require(nem)
-require(lpSolve)
-
 #' Internal function for making a row in the canonical ILP constraint matrix.
 #'
 #' @param edgeCoordinates Node indices of an edge in the adjacency matrix of the
@@ -15,11 +12,12 @@ rowMaker <- function(edgeCoordinates, dimension) {
 }
 
 #' Internal function for running the ILP.
-#' 
+#'
 #' @param NamedEgeneProfile Effect profile as a named vector.
 #' @param nemObject A \code{nem} object.
 #' @param constraintMatrix The corresponding canonical ILP constraint matrix.
 #' @return The ILP solution of the signalling states of the nodes in the graph.
+#' @import lpSolve
 runILP <- function(NamedEgeneProfile, nemObject, constraintMatrix) {
   # BEWARE: nem `inference = "score"' returns nested nemObject$mappos$mappos.
   obj.func.coefs <- sapply(nemObject[["control"]][["Sgenes"]], function(Sgene) {
@@ -46,6 +44,7 @@ runILP <- function(NamedEgeneProfile, nemObject, constraintMatrix) {
 #'   observational profiles, for instance with time points.
 #' @return A matrix of signalling states for the nodes (rows) in the various
 #'   time points (columns).
+#' @export
 tsNEM <- function(nemObject, observationalLogDensities) {
   if(is.vector(observationalLogDensities)) {
     observationalLogDensities <- as.matrix(observationalLogDensities)
