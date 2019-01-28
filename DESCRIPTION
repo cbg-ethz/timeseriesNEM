@@ -1,0 +1,14 @@
+Package: timeseriesNEM
+Type: Package
+Title: Map an Observational Time Series onto a Static NEM Signalling Network
+Version: 0.1.0
+Authors@R: person("Mathias", "Cardner", email = "mathias.cardner@bsse.ethz.ch",
+  role = c("aut", "cre"))
+Maintainer: Mathias Cardner <mathias.cardner@bsse.ethz.ch>
+Description: A method for mapping a non-interventional time series onto a static
+    signalling network inferred using the Bioconductor package 'nem'.
+Depends: R
+Imports: lpSolve, nem
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
