@@ -2,7 +2,7 @@
 % Please edit documentation in R/tsNEM.R
 \name{tsNEM}
 \alias{tsNEM}
-\title{Map an observational E-gene profile onto a NEM.}
+\title{Map observational E-gene profiles onto a static NEM.}
 \usage{
 tsNEM(nemObject, observationalLogDensities)
 }
@@ -12,12 +12,12 @@ tsNEM(nemObject, observationalLogDensities)
 \item{observationalLogDensities}{A matrix (or vector) of effect profiles
 recorded as log densities. The (row) names must correspond to the E-gene
 names in \code{nemObject}. The column names should identify the
-observational profiles, for instance with time points.}
+observational profiles, for instance as time points.}
 }
 \value{
 A matrix of signalling states for the nodes (rows) in the various
   time points (columns).
 }
 \description{
-Map an observational E-gene profile onto a NEM.
+Map observational E-gene profiles onto a static NEM.
 }
