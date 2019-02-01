@@ -19,9 +19,6 @@ knitr::opts_chunk$set(
 ```{r}
 library(nem)
 library(timeseriesNEM)
-# library(lpSolve)
-# source("../R/tsNEM.R")
-# source("../R/helper_functions.R")
 ```
 
 Let's generate a random NEM with 10 S-nodes.
