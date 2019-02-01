@@ -20,3 +20,4 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/cbg-ethz/timeseriesNEM/
+BugReports: https://github.com/cbg-ethz/timeseriesNEM/issues
