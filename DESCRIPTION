@@ -6,7 +6,7 @@ Authors@R: person("Mathias", "Cardner", email = "mathias.cardner@bsse.ethz.ch",
   role = c("aut", "cre"))
 Maintainer: Mathias Cardner <mathias.cardner@bsse.ethz.ch>
 Description: A method for mapping a non-interventional time series onto a static
-    signalling network inferred using the Bioconductor package 'nem'.
+    nested effects model, as inferred using the Bioconductor package 'nem'.
 Depends: R (>= 3.5.0)
 Imports: 
     lpSolve,
