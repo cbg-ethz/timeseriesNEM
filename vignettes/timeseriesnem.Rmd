@@ -18,23 +18,24 @@ knitr::opts_chunk$set(
 
 ```{r}
 library(nem)
-library(lpSolve)
-source("../R/tsNEM.R")
-source("../R/helper_functions.R")
+library(timeseriesNEM)
+# library(lpSolve)
+# source("../R/tsNEM.R")
+# source("../R/helper_functions.R")
 ```
 
 Let's generate a random NEM with 10 S-nodes.
 
 ```{r}
 set.seed(1)
-nem.res <- sample_random_NEM_and_data(n = 10, m = 1000)
+nem.res <- timeseriesNEM:::sample_random_NEM_and_data(n = 10, m = 1000)
 plot(nem.res, transitiveReduction = TRUE)
 ```
 
 Say we perturb S4. Which other S-nodes would then be perturbed? Generate an observational effect profile from this perturbation.
 
 ```{r}
-test <- generate_tsNEM_dataset(nem.res, "S4")
+test <- timeseriesNEM:::generate_tsNEM_dataset(nem.res, "S4")
 test$affectedSgenes
 ```
 
