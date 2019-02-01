@@ -35,13 +35,13 @@ runILP <- function(NamedEgeneProfile, nemObject, constraintMatrix) {
   return(activity)
 }
 
-#' Map an observational E-gene profile onto a NEM.
+#' Map observational E-gene profiles onto a static NEM.
 #'
 #' @param nemObject A \code{nem} object.
 #' @param observationalLogDensities A matrix (or vector) of effect profiles
 #'   recorded as log densities. The (row) names must correspond to the E-gene
 #'   names in \code{nemObject}. The column names should identify the
-#'   observational profiles, for instance with time points.
+#'   observational profiles, for instance as time points.
 #' @return A matrix of signalling states for the nodes (rows) in the various
 #'   time points (columns).
 #' @importFrom nem transitive.reduction
