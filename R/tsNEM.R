@@ -44,6 +44,7 @@ runILP <- function(NamedEgeneProfile, nemObject, constraintMatrix) {
 #'   observational profiles, for instance with time points.
 #' @return A matrix of signalling states for the nodes (rows) in the various
 #'   time points (columns).
+#' @importFrom nem transitive.reduction
 #' @export
 tsNEM <- function(nemObject, observationalLogDensities) {
   if(is.vector(observationalLogDensities)) {
