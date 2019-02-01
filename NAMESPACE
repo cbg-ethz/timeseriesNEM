@@ -3,3 +3,4 @@
 export(tsNEM)
 import(nem)
 importFrom(lpSolve,lp)
+importFrom(nem,transitive.reduction)
